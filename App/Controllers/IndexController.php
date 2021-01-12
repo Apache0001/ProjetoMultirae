@@ -23,14 +23,15 @@
 
             $this->render('recursos', 'layout');
         }
-
+        //Cadastro de usuario com sucesso
         public function cadastro(){
 
             $this->render('cadastro', 'layout');
         }
+        //Inscricao de usuario
         public function inscreverse(){
              #definindo parametros para tratamentos de erros e recuperação de dados
-             $this->view->erroCadastro = false;
+             $this->view->erroCadastro = array();
              $this->view->usuario = array(
                 'nome' => '',
                 'csenha' => '',
@@ -41,10 +42,23 @@
                 'complemento' => '',
                 'endereco' => '',
              );
+             $resp = array(
+                'valido' => true,
+                'validoNome' => true,
+                'validoSenha' => true,
+                'validoCep' => true
+ 
+            );
+            
+             $this->view->CadastroErro = array(
+                'erronome' => true,
+                'errosenha' => true,
+                'errocep' => true
+            );
              #rederizando página inscreverse
              $this->render('inscreverse','layout');
         }
-
+        //Registrar usuario
         public function registrar(){
             
              //receber os dados do formulário
@@ -59,10 +73,32 @@
             $usuario->__set('endereco_usuario', $_POST['endereco']);
             $usuario->__set('complemento_usuario', $_POST['complemento']);
 
-        
+            
+            $resp = $usuario->validarCadastro();
+           
+            
 
+            if($resp['valido'] == true){
                 $usuario->salvar();
                 $this->render('cadastro');
+                
+            }
+            else{
+                $this->view->CadastroErro = array(
+                    'erronome' => $resp['validoNome'],
+                    'errosenha' => $resp['validoSenha'],
+                    'errocep' => $resp['validoCep'],
+                );
+                $this->view->usuario = array(
+                    'nome' => $_POST['nome'],
+                    'cep' => $_POST['cep'],
+                    'complemento' => $_POST['complemento'],
+                    'endereco' => $_POST['endereco'],
+                    'numero' => $_POST['numero']
+                );
+
+                $this->render('inscreverse');
+            }
            
         }
     }

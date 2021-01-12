@@ -28,6 +28,11 @@
                 'controller' => 'IndexController',
                 'action' => 'registrar' // Métodos que estarão no controlador
             );
+            $routes['timeline'] = array(
+                'route' => '/timeline',
+                'controller' => 'AppController',
+                'action' => 'timeline' // Métodos que estarão no controlador
+            );
 
             //Setando o valor do atributo Router
             $this->setRoutes($routes);

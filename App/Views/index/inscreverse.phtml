@@ -1,8 +1,4 @@
-            <?php 
-                if($this->view->erroCadastro){
-                    echo'<h1 class="bg-warning">ERRO AO TENTAR CADASTRAR</h1>';
-                }
-            ?>
+
             
             <div class="row justify-content-center align-items-center formulario">
     
@@ -13,6 +9,14 @@
                             <div class="col-md-12">
                                 <input type="text" value="<?php echo $this->view->usuario['nome']?>" name="nome" placeholder="Nome Completo" class="form-control" id="inputEmail4">
                             </div>
+                            <?php if($this->view->CadastroErro['erronome'] == false){ ?> 
+                                <div class="row">
+                                    <div class="col">
+                                        <span class="text text-danger">* Nome de usuário errado</span>
+
+                                    </div>
+                                </div>
+                            <?php } ?>
                             <div class="col-md-12">
                                 <input type="password" name="senha" placeholder="Senha" class="form-control" id="inputPassword4">
                             </div>
@@ -20,13 +24,18 @@
                                 <input type="password" name="csenha" placeholder="Confirmar Senha" class="form-control" id="inputPassword4">
                             </div>
                             <div class="col-md-3">
+                                <?php if($this->view->CadastroErro['errocep'] == false){ ?>
+                                    <label for="formFile" class="form-label text text-danger">*Erro cep</label>
+                                <?php } ?>
                                 <input type="text" value="<?php echo $this->view->usuario['cep']?>"name="cep" class="form-control" id="inputCity" placeholder="CEP">
+                               
                             </div>
                             <div class="col-md-3">
                                 <input type="text" value="<?php echo $this->view->usuario['numero']?>"name="numero" class="form-control" id="inputCity" placeholder="Número">
                             </div>
+    
                             <div class="col-md-6">
-                                <input type="text"value="<?php echo $this->view->usuario['cidade']?>" name="cidade" class="form-control" id="inputCity" placeholder="Cidade">
+                                <input type="text" name="cidade" class="form-control" id="inputCity" placeholder="Cidade">
                             </div>
                             <div class="col-12">
                                

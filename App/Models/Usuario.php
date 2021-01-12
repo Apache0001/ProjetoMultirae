@@ -23,7 +23,33 @@ use MF\Model\Model;
         public function validarCadastro(){
            //Tratativa dos dados enviados pelo formulário
            // A fazer
-           return true;
+           $valido = true;
+           $validoNome = true;
+           $validoSenha = true;
+           $validoCep = true;
+           
+           if(strlen($this->__get('nome_usuario')) < 3){
+                $validoNome = false;
+           }
+           if(strlen($this->__get('senha_usuario')) < 3){
+               $validoSenha = false;
+           }
+           if(strlen($this->__get('cep')) < 3){
+               $validoCep = false;
+           }
+
+           if($validoNome == false || $validoCep == false || $validoSenha == false){
+                $valido = false;
+           }
+           
+           $resp = array(
+               'valido' => $valido,
+               'validoNome' => $validoNome,
+               'validoSenha' => $validoSenha,
+               'validoCep' => $validoCep,
+
+           );
+           return $resp;
         }
 
          //Salvar
