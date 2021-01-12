@@ -1,0 +1,47 @@
+            <?php 
+                if($this->view->erroCadastro){
+                    echo'<h1 class="bg-warning">ERRO AO TENTAR CADASTRAR</h1>';
+                }
+            ?>
+            
+            <div class="row justify-content-center align-items-center formulario">
+    
+                <div class="col-md-5">
+                    <fieldset>
+                        <legend class="h1 text-success">Cadastro de Usuário</legend>
+                        <form class="row g-3" action="/registrar" method="post">
+                            <div class="col-md-12">
+                                <input type="text" value="<?php echo $this->view->usuario['nome']?>" name="nome" placeholder="Nome Completo" class="form-control" id="inputEmail4">
+                            </div>
+                            <div class="col-md-12">
+                                <input type="password" name="senha" placeholder="Senha" class="form-control" id="inputPassword4">
+                            </div>
+                            <div class="col-md-12">
+                                <input type="password" name="csenha" placeholder="Confirmar Senha" class="form-control" id="inputPassword4">
+                            </div>
+                            <div class="col-md-3">
+                                <input type="text" value="<?php echo $this->view->usuario['cep']?>"name="cep" class="form-control" id="inputCity" placeholder="CEP">
+                            </div>
+                            <div class="col-md-3">
+                                <input type="text" value="<?php echo $this->view->usuario['numero']?>"name="numero" class="form-control" id="inputCity" placeholder="Número">
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text"value="<?php echo $this->view->usuario['cidade']?>" name="cidade" class="form-control" id="inputCity" placeholder="Cidade">
+                            </div>
+                            <div class="col-12">
+                               
+                                <input type="text"value="<?php echo $this->view->usuario['endereco']?>" name="endereco" class="form-control" id="inputAddress" placeholder="Endereço">
+                            </div>
+                            <div class="col-12">
+                         
+                                <input type="text" value="<?php echo $this->view->usuario['complemento']?>"name="complemento" class="form-control" id="inputAddress2" placeholder="Complemento">
+                            </div>
+                            
+                            
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-success w-100">Cadastrar</button>
+                            </div>
+                        </form>
+                    </fieldset>
+                </div>
+        </div>
