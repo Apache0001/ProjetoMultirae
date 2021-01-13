@@ -10,10 +10,15 @@
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+		<script src="https://code.jquery.com/jquery-3.5.1.js"integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  		crossorigin="anonymous"></script>
 
-		<link rel="stylesheet" type="text/css" href="/css/style.css">
 		<link rel="stylesheet" type="text/css" href="/css/footer/footer.css">
 		<link rel="stylesheet" type="text/css" href="/css/cadastro/formulario.css">
+		<link rel="stylesheet" type="text/css"href="/css/login/login.css">
+
+		<!--JQUERY-->
+		<script src="/js/home/login.js"></script>
 
 
 	</head>
@@ -47,12 +52,42 @@
 					<a class="nav-link" href="#">Preço</a>
 				</li>
 				<li class="nav-item">
-					<a class="btn btn-outline-light ml-sm-4" href="#">Entrar</a>
+					<a id="entrar" class="btn btn-outline-light ml-sm-4" href="#">Entrar</a>
 				</li>
 				</ul>
 			</div>
 			</div>
 		</nav>
+
+	<!--TELA DE LOGIN-->
+	<div id="telaLogin">
+		<div class="wrapper fadeInDown">
+			
+	  		<div id="formContent">
+			  <i id="icoIMG" class="far fa-times-circle"></i>
+	    		<!-- Tabs Titles -->
+	
+				<!-- Icon -->
+				<div class="fadeIn first">
+				<img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Icon" />
+				</div>
+	
+				<!-- Login Form -->
+				<form>
+				<input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
+				<input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
+				<input type="submit" class="fadeIn btn-login fourth" value="Log In">
+				</form>
+	
+				<!-- Remind Passowrd -->
+				<div id="formFooter">
+				<a class="underlineHover" href="#">Forgot Password?</a>
+				</div>
+	
+	  		</div>
+		</div>
+	</div>
+	<!--FIM TELA DE LOGIN -->
 
 	</header>
 		<!-- Onde tudo está sendo renderizado -->
