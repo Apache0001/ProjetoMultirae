@@ -1,1 +1,47 @@
-<h1>Olá, Mundo!</h1>
+        <?php
+            session_start() 
+
+         ?>
+        <!-- menu -->
+        <div class="nav-side-menu">
+		    <div class="brand"><i class="fas fa-user-circle logo-icon"></i></div>
+            <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+        
+            <div class="menu-list">
+        
+                <ul id="menu-content" class="menu-content collapse out">
+                    <li>
+                        <a href="#"><i class="fa fa-tachometer-alt sidebar-icon"></i> Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="far fa-id-card sidebar-icon"></i> Profile</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fab fa-forumbee sidebar-icon"></i> Forúm</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="far fa-calendar-alt sidebar-icon"></i> Calendário</a>
+                    </li>
+                    <li  data-toggle="collapse" data-target="#ajuda" class="collapsed">
+                        <a href="#"><i class="fa fa-life-ring sidebar-icon"></i> Ajuda <span class="arrow"><i class="fa fa-angle-down"></i></spam></a>
+                    </li>
+                    <ul class="sub-menu collapse" id="ajuda">
+                        <li><a href="#"><i class="fa fa-angle-right"></i> Documentação</a></li>
+                        <li><a href="#"><i class="fa fa-angle-right"></i> Suporte <small><i class="fa fa-external-link"></i></small></a></li>
+                    </ul>
+                    <li>
+                        <a href="/sair"><i class="fas fa-arrow-circle-left sidebar-icon"></i> Sair</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- paginas -->
+		<div class="main" id="pagina">
+            <?php 
+                echo '<pre>';
+                print_r($_SESSION);
+                echo '</pre>';
+            
+            ?>
+        </div>

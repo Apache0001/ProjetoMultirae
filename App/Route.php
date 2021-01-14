@@ -39,6 +39,17 @@
                 'action' => 'autenticar' // Métodos que estarão no controlador
             );
 
+            $routes['acessorestrito'] = array(
+                'route' => '/acessorestrito',
+                'controller' => 'AppController',
+                'action' => 'acessorestrito' // Métodos que estarão no controlador
+            );
+            $routes['sair'] = array(
+                'route' => '/sair',
+                'controller' => 'AuthController',
+                'action' => 'sair'
+            );
+
             //Setando o valor do atributo Router
             $this->setRoutes($routes);
 
