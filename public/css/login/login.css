@@ -1,3 +1,7 @@
+.msgErro{
+  color: red;
+}
+
 #telaLogin{
     display: none;
     width: 100%;
@@ -68,7 +72,7 @@
   
   /* FORM TYPOGRAPHY*/
   
-  input[type=button], input[type=submit], input[type=reset]  {
+  #TelaLogin input[type=button], input[type=submit], input[type=reset]  {
     background-color: #28a745;
     border: none;
     color: white;
@@ -90,11 +94,11 @@
     transition: all 0.3s ease-in-out;
   }
   
-  input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover  {
+  #TelaLogin  input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover  {
     background-color: #28a745;
   }
   
-  input[type=button]:active, input[type=submit]:active, input[type=reset]:active  {
+  #TelaLogin input[type=button]:active, input[type=submit]:active, input[type=reset]:active  {
     -moz-transform: scale(0.95);
     -webkit-transform: scale(0.95);
     -o-transform: scale(0.95);
@@ -102,7 +106,7 @@
     transform: scale(0.95);
   }
   
-  input[type=text] {
+  #TelaLogin input[type=text] {
     background-color: #f6f6f6;
     border: none;
     color: #0d0d0d;
@@ -123,12 +127,12 @@
     border-radius: 5px 5px 5px 5px;
   }
   
-  input[type=text]:focus {
+  #TelaLogin input[type=text]:focus {
     background-color: #fff;
     border-bottom: 2px solid #28a745;
   }
   
-  input[type=text]:placeholder {
+  #TelaLogin input[type=text]:placeholder {
     color: #cccccc;
   }
   

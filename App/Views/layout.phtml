@@ -1,3 +1,7 @@
+<?php 
+	$login = isset($_GET['login']);
+?>
+
 <html>
 	<head>
 		<meta charset="utf-8" />
@@ -28,7 +32,7 @@
 	<body>
 	<header><!--Cabecalho do site-->
 				
-		<nav class="navbar navbar-expand-sm navbar-light bg-success">
+		<nav class="navbar navbar-expand-sm navbar-light bg-success ">
 			<div class="container">
 			<a href="#" class="navbar-brand">
 				Logo
@@ -60,30 +64,29 @@
 			</div>
 			</div>
 		</nav>
-
 	<!--TELA DE LOGIN-->
-	<div id="telaLogin">
-		<div class="wrapper fadeInDown">
+	<div id="telaLogin" <?php if ($login == 'erro'){ ?> style="display:block;position:absolute; z-index:2;" <?php } ?>>
+		<div class="wrapper <?php if($login != 'erro'){?> fadeInDown <?php }?>">
 			
 	  		<div id="formContent">
 			  <i id="icoIMG" class="far fa-times-circle"></i>
 	    		<!-- Tabs Titles -->
 	
 				<!-- Icon -->
-				<div class="fadeIn first">
+				<div class="<?php if($login != 'erro'){?> fadeInDown <?php }?> first">
 				<img src="" id="icon" alt="User Icon" />
 				</div>
 	
 				<!-- Login Form -->
 				<form action="/autenticar" method="post">
-				<input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
-				<input type="text" id="password" class="fadeIn third" name="senha" placeholder="password">
-				<input type="submit" class="fadeIn btn-login fourth" value="Log In">
+				<input type="text" id="login" class="<?php if($login != 'erro'){?> fadeInDown <?php }?> second" name="login" placeholder="login">
+				<input type="text" id="password" class="<?php if($login != 'erro'){?> fadeInDown <?php }?> third" name="senha" placeholder="password">
+				<input type="submit" class="<?php if($login != 'erro'){?> fadeInDown <?php }?> btn-login fourth" value="Log In">
 				</form>
-	
+				<?php if($login == 'erro'){?> <span class="msgErro fadeInDown">Erro na Autenticação</span> <?php }?>
 				<!-- Remind Passowrd -->
 				<div id="formFooter">
-				<a class="underlineHover" href="#">Forgot Password?</a>
+				<a class="underlineHover" href="#">Esqueceu a senha?</a>
 				</div>
 	
 	  		</div>

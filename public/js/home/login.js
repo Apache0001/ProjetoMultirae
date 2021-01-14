@@ -14,6 +14,9 @@ $(document).ready(function(){
             $('#telaLogin').css('display','none')
         })
 
+        //Efeito menu navegacao com scroll
+
+       
 
         //Efeitos scroll index
         //Right
