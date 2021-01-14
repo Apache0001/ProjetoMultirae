@@ -67,6 +67,23 @@ use MF\Model\Model;
             return $this;
 
         }
+        //Autenticar Usuario
+
+        public function autenticar(){
+            $query = 'SELECT id_usuario, nome_usuario FROM usuarios where nome_usuario=:usuario and senha_usuario=:senha';
+            $stmt = $this->db->prepare($query);
+            $stmt->bindValue(':usuario', $this->__get('nome_usuario'));
+            $stmt->bindValue(':senha', $this->__get('senha_usuario'));
+            $stmt->execute();
+
+            $usuario = $stmt->fetch(\PDO::FETCH_ASSOC);
+            
+            if ( $usuario['id_usuario'] != '' && $usuario['nome_usuario'] != ''){
+                $this->__set('id', $usuario['id_usuario']);
+                $this->__set('nome_usuario', $usuario['nome_usuario']);
+            }
+            return $this;
+        }
 
     }
 ?>

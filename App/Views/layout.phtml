@@ -2,7 +2,7 @@
 	<head>
 		<meta charset="utf-8" />
 		<title>Miniframework</title>
-
+		<link rel="stylesheet" type="text/css"href="/css/login/login.css">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
 		<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
@@ -15,7 +15,7 @@
 
 		<link rel="stylesheet" type="text/css" href="/css/footer/footer.css">
 		<link rel="stylesheet" type="text/css" href="/css/cadastro/formulario.css">
-		<link rel="stylesheet" type="text/css"href="/css/login/login.css">
+		
 
 		<!--JQUERY-->
 		<script src="/js/home/login.js"></script>
@@ -40,16 +40,16 @@
 			<div class="collapse navbar-collapse" id="nav-principal">
 				<ul class="navbar-nav ml-auto align-items-center ">
 				<li class=" nav-item">
-					<a class="nav-link"  href="/">Home</a>
+					<a class="nav-link"  href="/">Página Inicial</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="/recursos">Recursos</a>
+					<a class="nav-link" href="/recursos">Seja um voluntário</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#">Benefícios</a>
+					<a class="nav-link" href="/mutirao">Mutirões</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#">Preço</a>
+					<a class="nav-link" href="">Sobre Nós</a>
 				</li>
 				<li class="nav-item">
 					<a id="entrar" class="btn btn-outline-light ml-sm-4" href="#">Entrar</a>
@@ -69,13 +69,13 @@
 	
 				<!-- Icon -->
 				<div class="fadeIn first">
-				<img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Icon" />
+				<img src="" id="icon" alt="User Icon" />
 				</div>
 	
 				<!-- Login Form -->
-				<form>
+				<form action="/autenticar" method="post">
 				<input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
-				<input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
+				<input type="text" id="password" class="fadeIn third" name="senha" placeholder="password">
 				<input type="submit" class="fadeIn btn-login fourth" value="Log In">
 				</form>
 	

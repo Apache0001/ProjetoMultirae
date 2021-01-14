@@ -33,6 +33,11 @@
                 'controller' => 'AppController',
                 'action' => 'timeline' // Métodos que estarão no controlador
             );
+            $routes['autenticar'] = array(
+                'route' => '/autenticar',
+                'controller' => 'AuthController',
+                'action' => 'autenticar' // Métodos que estarão no controlador
+            );
 
             //Setando o valor do atributo Router
             $this->setRoutes($routes);
