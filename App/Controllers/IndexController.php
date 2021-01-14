@@ -58,6 +58,13 @@
              #rederizando página inscreverse
              $this->render('inscreverse','layout');
         }
+        public function mutirao(){
+            $this->render('mutirao');
+        }
+        public function sobreNos(){
+            $this->render('sobreNos');
+        }
+
         //Registrar usuario
         public function registrar(){
             

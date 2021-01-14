@@ -26,7 +26,17 @@
             $routes['registrar'] = array(
                 'route' => '/registrar',
                 'controller' => 'IndexController',
-                'action' => 'registrar' // Métodos que estarão no controlador
+                'action' => 'registrar' 
+            );
+            $routes['mutirao'] = array(
+                'route' => '/mutirao',
+                'controller' => 'IndexController',
+                'action' => 'mutirao' 
+            );
+            $routes['sobreNos'] = array(
+                'route' => '/sobreNos',
+                'controller' => 'IndexController',
+                'action' => 'sobreNos' 
             );
             $routes['timeline'] = array(
                 'route' => '/timeline',
