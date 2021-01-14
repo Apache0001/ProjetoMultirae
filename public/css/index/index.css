@@ -1,0 +1,36 @@
+.box{
+    background-color: red;
+    height: 400px;
+}
+
+.animeRight{
+    opacity: 0;
+    transform: translate3d(-50px, 0px, 0px);
+    transition: .3s all ease;
+}
+.animeRight-init{
+    opacity: 1;
+    transition: .3s all ease;
+    transform: translate3d(0px, 0px, 0px);
+}
+.animeLeft{
+    opacity: 0;
+    transform: translate3d(50px, 0px, 0px);
+    transition: .3s all ease;
+}
+.animeLeft-init{
+    opacity: 1;
+    transform: translate3d(0px, 0px, 0px);
+    transition: .3s all ease;
+}
+
+.animeTop{
+    opacity: 0;
+    transform: translate3d(0px, 50px, 0px);
+    transition: .3s all ease;
+}
+.animeTop-init{
+    opacity: 1;
+    transform: translate3d(0px, 0px, 0px);
+    transition: .3s all ease;
+}
