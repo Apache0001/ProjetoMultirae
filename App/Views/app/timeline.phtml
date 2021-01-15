@@ -1,37 +1,182 @@
 
-        <!-- menu -->
-        <div class="nav-side-menu">
-		    <div class="brand"><i class="fas fa-user-circle logo-icon"></i></div>
-            <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
-        
-            <div class="menu-list">
-        
-                <ul id="menu-content" class="menu-content collapse out">
-                    <li>
-                        <a href="#"><i class="fa fa-tachometer-alt sidebar-icon"></i> Dashboard</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="far fa-id-card sidebar-icon"></i> Profile</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fab fa-forumbee sidebar-icon"></i> Forúm</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="far fa-calendar-alt sidebar-icon"></i> Calendário</a>
-                    </li>
-                    <li  data-toggle="collapse" data-target="#ajuda" class="collapsed">
-                        <a href="#"><i class="fa fa-life-ring sidebar-icon"></i> Ajuda <span class="arrow"><i class="fa fa-angle-down"></i></spam></a>
-                    </li>
-                    <ul class="sub-menu collapse" id="ajuda">
-                        <li><a href="#"><i class="fa fa-angle-right"></i> Documentação</a></li>
-                        <li><a href="#"><i class="fa fa-angle-right"></i> Suporte <small><i class="fa fa-external-link"></i></small></a></li>
+        <div class="wrapper">
+        <!-- Sidebar -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Bootstrap Sidebar</h3>
+            </div>
+    
+            <ul class="list-unstyled components">
+                <p>Dummy Heading</p>
+                <li class="active">
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                        <li>
+                            <a href="#">Home 1</a>
+                        </li>
+                        <li>
+                            <a href="#">Home 2</a>
+                        </li>
+                        <li>
+                            <a href="#">Home 3</a>
+                        </li>
                     </ul>
-                    <li>
-                        <a href="/sair"><i class="fas fa-arrow-circle-left sidebar-icon"></i> Sair</a>
-                    </li>
-                </ul>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu">
+                        <li>
+                            <a href="#">Page 1</a>
+                        </li>
+                        <li>
+                            <a href="#">Page 2</a>
+                        </li>
+                        <li>
+                            <a href="#">Page 3</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Portfolio</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+        </nav>
+        <div id="content">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+        
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <i class="fas fa-align-left"></i>
+                        
+                    </button>
+        
+                </div>
+            </nav>
+            <!--Conteudo a ser modificado-->
+            <div id="conteudo">
+                <nav class="navbar navbar-expand-lg menu">
+                    <div class="container">
+                      <div class="navbar-nav">
+                          <a class="menuItem" href="/timeline">
+                              Home
+                          </a>
+                
+                          <a class="menuItem" href="/sair">
+                              Sair
+                          </a>
+                            <img src="/img/twitter_logo.png" class="menuIco" />
+                      </div>
+                    </div>
+                </nav>
+                
+                <div class="container mt-5">
+                    <div class="row pt-2">
+                        
+                        <div class="col-md-3">
+                
+                            <div class="perfil">
+                                <div class="perfilTopo">
+                
+                                </div>
+                
+                                <div class="perfilPainel">
+                                    
+                                    <div class="row mt-2 mb-2">
+                                        <div class="col mb-2">
+                                            <span class="perfilPainelNome">Nome do Usuário</span>
+                                        </div>
+                                    </div>
+                
+                                    <div class="row mb-2">
+                
+                                        <div class="col">
+                                            <span class="perfilPainelItem">Tweets</span><br />
+                                            <span class="perfilPainelItemValor">0</span>
+                                        </div>
+                
+                                        <div class="col">
+                                            <span class="perfilPainelItem">Seguindo</span><br />
+                                            <span class="perfilPainelItemValor">0</span>
+                                        </div>
+                
+                                        <div class="col">
+                                            <span class="perfilPainelItem">Seguidores</span><br />
+                                            <span class="perfilPainelItemValor">0</span>
+                                        </div>
+                
+                                    </div>
+                
+                                </div>
+                            </div>
+                
+                        </div>
+                
+                        <div class="col-md-6">
+                            <div class="row mb-2">
+                                <div class="col tweetBox">
+                                    <form>
+                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                        
+                                        <div class="col mt-2 d-flex justify-content-end">
+                                            <button type="submit" class="btn btn-primary">Tweet</button>
+                                        </div>
+                
+                                    </form>
+                                </div>
+                            </div>
+                
+                            <div class="row tweet">
+                                <div class="col">
+                                    <p><strong>Nome do Usuário</strong> <span class="text text-muted">- data tweet</span></p>
+                                    <p>Conteúdo do tweet</p>
+                
+                                    <br />
+                                    <form>
+                                        <div class="col d-flex justify-content-end">
+                                            <button type="submit" class="btn btn-danger"><small>Remover</small></button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                
+                            <div class="row tweet">
+                                <div class="col">
+                                    <p><strong>Nome do Usuário</strong> <span class="text text-muted">- data tweet</span></p>
+                                    <p>Conteúdo do tweet</p>
+                
+                                    <br />
+                                    <form>
+                                        <div class="col d-flex justify-content-end">
+                                            <button type="submit" class="btn btn-danger"><small>Remover</small></button>
+                                        </div>
+                                    </form>		
+                                </div>
+                            </div>
+                
+                
+                        </div>
+                
+                
+                        <div class="col-md-3">
+                            <div class="quemSeguir">
+                                <span class="quemSeguirTitulo">Quem seguir</span><br />
+                                <hr />
+                                <a href="#" class="quemSeguirTxt">Procurar por pessoas conhecidas</a>
+                            </div>
+                        </div>
+                
+                    </div>
+                </div>
             </div>
         </div>
+    
+    </div>
         
         <!-- paginas -->
 		<div class="main" id="pagina">
