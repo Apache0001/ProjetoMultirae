@@ -1,3 +1,5 @@
+
+
 .wrapper {
   display: flex;
   align-items: stretch;
@@ -101,6 +103,10 @@ ul ul a {
 
 #content{
   width: 100%;
+}
+.middle-mutira{
+  overflow-y: scroll;
+
 }
 
 /* MENU PRINCIPAL */
@@ -216,7 +222,7 @@ h2 {
 
 .perfilTopo {
     height: 95px;
-    background-color: #1DA1F2
+    background-color: #7386d5
 }
 
 .perfilPainel {
@@ -290,4 +296,13 @@ h2 {
 
 .tweet:hover {
     background-color: #f5f8fa;
+}
+
+.btn-primary{
+  background-color: #7386d5;
+  border-color: #7386d5;
+}
+.btn-primary:hover{
+  background-color:  #5766ac;
+  border-color:  #6d7fcc;
 }

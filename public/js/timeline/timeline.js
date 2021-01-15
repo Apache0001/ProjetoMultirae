@@ -16,9 +16,11 @@ $(document).ready(function () {
             type: 'POST',
             url: 'http://localhost:8080/removeMutira',
             data: `mutira=${value}`,
-            success: dados => {console.log(dados)},
+            success: location.reload(),
             error: erro => {console.log(erro)}
         })
+
+        
     })
     //Salvar Mutira
     $('#btn-salvar').on('click',function(){
@@ -29,7 +31,7 @@ $(document).ready(function () {
             type: 'POST',
             url: 'http://localhost:8080/salvarMutira',
             data: `textmutira=${text}`,
-            success: dados => {console.log(dados)},
+            success: location.reload(),
             error: erro => {console.log(erro)}
         })
 
