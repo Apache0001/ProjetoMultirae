@@ -106,7 +106,7 @@
     transform: scale(0.95);
   }
   
-  #TelaLogin input[type=text] {
+  #TelaLogin .input-text {
     background-color: #f6f6f6;
     border: none;
     color: #0d0d0d;
@@ -127,12 +127,12 @@
     border-radius: 5px 5px 5px 5px;
   }
   
-  #TelaLogin input[type=text]:focus {
+  #TelaLogin .input-text:focus {
     background-color: #fff;
     border-bottom: 2px solid #28a745;
   }
   
-  #TelaLogin input[type=text]:placeholder {
+  #TelaLogin .input-text:placeholder {
     color: #cccccc;
   }
   

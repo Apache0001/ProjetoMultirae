@@ -80,8 +80,8 @@
 	
 				<!-- Login Form -->
 				<form action="/autenticar" method="post">
-				<input type="text" id="login" class="<?php if($login != 'erro'){?> fadeInDown <?php }?> second" name="login" placeholder="login">
-				<input type="text" id="password" class="<?php if($login != 'erro'){?> fadeInDown <?php }?> third" name="senha" placeholder="password">
+				<input type="text" id="login" class="<?php if($login != 'erro'){?> fadeInDown <?php }?> input-text second" name="login" placeholder="login">
+				<input type="password" id="password" class="<?php if($login != 'erro'){?> fadeInDown <?php }?> input-text third" name="senha" placeholder="password">
 				<input type="submit" class="<?php if($login != 'erro'){?> fadeInDown <?php }?> btn-login fourth" value="Log In">
 				</form>
 				<?php if($login == 'erro'){?> <span class="msgErro fadeInDown">Erro na Autenticação</span> <?php }?>
