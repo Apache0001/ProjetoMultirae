@@ -38,17 +38,29 @@
                 'controller' => 'IndexController',
                 'action' => 'sobreNos' 
             );
+            // ####################### App Controllers ################
             $routes['timeline'] = array(
                 'route' => '/timeline',
                 'controller' => 'AppController',
-                'action' => 'timeline' // Métodos que estarão no controlador
+                'action' => 'timeline' 
             );
+            $routes['salvarMutira'] = array(
+                'route' => '/salvarMutira',
+                'controller' => 'AppController',
+                'action' => 'salvarMutira' 
+            );
+            $routes['removeMutira'] = array(
+                'route' => '/removeMutira',
+                'controller' => 'AppController',
+                'action' => 'removeMutira' 
+            );
+
+            // ############################### Auth Controllers ##############
             $routes['autenticar'] = array(
                 'route' => '/autenticar',
                 'controller' => 'AuthController',
                 'action' => 'autenticar' // Métodos que estarão no controlador
             );
-
             $routes['acessorestrito'] = array(
                 'route' => '/acessorestrito',
                 'controller' => 'AppController',
