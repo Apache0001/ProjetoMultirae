@@ -3,39 +3,39 @@
         <!-- Sidebar -->
         <nav id="sidebar">
             <div class="sidebar-header">
-                <h3>Bootstrap Sidebar</h3>
+                <h3>Menu</h3>
             </div>
     
             <ul class="list-unstyled components">
-                <p>Dummy Heading</p>
+                <p>Dashboard</p>
                 <li class="active">
                     <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
                     <ul class="collapse list-unstyled" id="homeSubmenu">
                         <li>
-                            <a href="#">Home 1</a>
+                            <a href="#">Home</a>
                         </li>
                         <li>
-                            <a href="#">Home 2</a>
+                            <a href="#">Home</a>
                         </li>
                         <li>
-                            <a href="#">Home 3</a>
+                            <a href="#">Home</a>
                         </li>
                     </ul>
                 </li>
                 <li>
-                    <a href="#">About</a>
+                    <a href="#">Perfil</a>
                 </li>
                 <li>
                     <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
                     <ul class="collapse list-unstyled" id="pageSubmenu">
                         <li>
-                            <a href="#">Page 1</a>
+                            <a href="#">Pag</a>
                         </li>
                         <li>
-                            <a href="#">Page 2</a>
+                            <a href="#">Page</a>
                         </li>
                         <li>
-                            <a href="#">Page 3</a>
+                            <a href="#">Pag</a>
                         </li>
                     </ul>
                 </li>
@@ -43,7 +43,13 @@
                     <a href="#">Portfolio</a>
                 </li>
                 <li>
-                    <a href="#">Contact</a>
+                    <a href="#">Contato</a>
+                </li>
+                <li>
+                    <a href="#">Calendário</a>
+                </li>
+                <li>
+                    <a href="#">Ajuda</a>
                 </li>
             </ul>
         </nav>
@@ -70,7 +76,7 @@
                           <a class="menuItem" href="/sair">
                               Sair
                           </a>
-                            <img src="/img/twitter_logo.png" class="menuIco" />
+                            <img src="" class="menuIco" />
                       </div>
                     </div>
                 </nav>
@@ -79,26 +85,26 @@
                     <div class="conteudo-rende container mt-5">
                         <div class="row pt-2">
                             
-                            <div class="col-md-3">
+                            <div class="col-md-2">
                     
                                 <div class="perfil">
                                     <div class="perfilTopo">
-                    
+                                    
                                     </div>
                     
                                     <div class="perfilPainel">
                                         
                                         <div class="row mt-2 mb-2">
                                             <div class="col mb-2">
-                                                <span class="perfilPainelNome">Nome do Usuário</span>
+                                                <span class="perfilPainelNome"><?php echo $_SESSION['nome']?></span>
                                             </div>
                                         </div>
                     
                                         <div class="row mb-2">
                     
                                             <div class="col">
-                                                <span class="perfilPainelItem">Tweets</span><br />
-                                                <span class="perfilPainelItemValor">0</span>
+                                                <span class="perfilPainelItem">Mutiras</span><br />
+                                                <span class="perfilPainelItemValor"><?php echo $this->view->contMutira ?></span>
                                             </div>
                     
                                             <div class="col">
@@ -118,7 +124,7 @@
                     
                             </div>
                     
-                            <div class="col-md-6">
+                            <div class="col-md-6 ">
                                 <div class="row mb-2">
                                     <div class="col tweetBox">
             
@@ -139,11 +145,11 @@
                                             <p><?php echo $mutira['mutira']?></p>
                         
                                             <br />
-                                            
+                                            <?php if($_SESSION['id'] == $mutira['id_usuario']){ ?>
                                                 <div class="col d-flex justify-content-end">
                                                     <button type="" class="btn btn-danger btn-remove" value="<?php echo $mutira['mutira']?>"><small>Remover</small></button>
                                                 </div>
-                                            
+                                            <?php }?>
                                         </div>
                                     </div>
                                 <?php }?>
@@ -153,12 +159,18 @@
                             </div>
                     
                     
-                            <div class="col-md-3">
+                            <div class="col-md-4">
                                 <div class="quemSeguir">
                                     <span class="quemSeguirTitulo">Quem seguir</span><br />
                                     <hr />
-                                    <a href="#" class="quemSeguirTxt">Procurar por pessoas conhecidas</a>
+                                    <a href="" class="quemSeguirTxt">Procurar por pessoas conhecidas</a>
                                 </div>
+                                <div class="input-group md mb-3">
+									<input type="text" name="pesquisarPor" class="form-control" placeholder="Quem você está procurando?">
+									<div class="input-group-append">
+										<button class="btn btn-primary" type="submit">Procurar</button>
+									</div>
+								</div>
                             </div>
                     
                         </div>

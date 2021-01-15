@@ -14,7 +14,11 @@
              $mutira->__set('id_usuario',$_SESSION['id']);
              $mutiras = $mutira->getAll();
              $this->view->mutiras = $mutiras;
-
+             
+             $contMutira = $mutira->contMutira()[0]['count(*)'];
+             $this->view->contMutira = $contMutira;
+             
+             
             $this->render('timeline','layoutApp');
         }
 
