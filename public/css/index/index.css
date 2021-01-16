@@ -51,3 +51,22 @@
 img.rounded{
     border: 3px solid #5867F0;
 }
+
+/*INSCREVERSE*/
+
+.titulo-ins{
+    color:#5867F0;
+}
+.btn-success{
+    background-color: #5867F0;
+    border-color: #5867F0;
+}
+.btn-success:hover{
+    background-color: #434eb3;
+    border-color: #434eb3;
+}
+.form-control:focus{
+    border-color: #5867F0;
+    box-shadow:0 0 0 0.2rem rgb(82, 88, 139, 0.4);
+    
+}
