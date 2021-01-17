@@ -59,6 +59,16 @@
                 'controller' => 'AppController',
                 'action' => 'Appmutira' 
             );
+            $routes['criarmutira'] = array(
+                'route' => '/criarmutira',
+                'controller' => 'AppController',
+                'action' => 'criarmutira' 
+            );
+            $routes['cadastrarmutira'] = array(
+                'route' => '/cadastrarmutira',
+                'controller' => 'AppController',
+                'action' => 'cadastrarmutira' 
+            );
             $routes['Apprede'] = array(
                 'route' => '/Apprede',
                 'controller' => 'AppController',

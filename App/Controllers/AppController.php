@@ -58,12 +58,36 @@
             //header('Location: /timeline');
 
         }
-
+        // ################## Tudo sobre mutiroes###################
         public function Appmutira(){
             $this->validaAutenticacao();
 
             $this->render('mutirae', 'layoutApp');
         }
+        public function criarmutira(){
+            $this->validaAutenticacao();
+
+            $this->render('criarmutira','layoutApp');
+        }
+        public function cadastrarmutira(){
+            $this->validaAutenticacao();
+
+            $mutiroes = Conteiner::getModel('Mutiroes');
+
+            $mutiroes->__set('id_usuario', $_SESSION['id']);
+            $mutiroes->__set('titulo', $_POST['titulo-mutira']);
+            $mutiroes->__set('texto', $_POST['texto-mutira']);
+            $mutiroes->__set('data_mutirao', $_POST['data-mutira']);
+            $mutiroes->__set('img', $_POST['imagem-mutira']);
+            $mutiroes->__set('local', $_POST['local-mutira']);
+
+            $mutiroes->salvarMutiroes();
+
+            header('Location: /criarmutira');
+
+        }
+
+
         public function Apprede(){
             $this->validaAutenticacao();
             // Recuperação dos tweets

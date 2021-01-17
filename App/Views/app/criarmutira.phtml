@@ -1,0 +1,44 @@
+<form method="post" action="/cadastrarmutira">
+    <div class="row">
+        <div class="col-md-4 d-flex justify-content-center  align-items-center">
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Título</label>
+                <input name="titulo-mutira" type="text" class="form-control" id="exampleFormControlInput1">
+            </div>
+        </div>
+        <div class="col-md-4 d-flex justify-content-center  align-items-center">
+            <div class="form-group">
+                <label for="exampleFormControlFile1">Data</label>
+                <input name="data-mutira" type="datetime-local" class="form-control-file" id="exampleFormControlFile1">
+            </div>
+        </div>
+        <div class="col-md-4 d-flex justify-content-center  align-items-center">
+            <div class="form-group">
+                <label class="label btn btn-primary" for="exampleFormControlFile2">Imagem</label>
+                <input name="imagem-mutira" type="file" class="form-control-file" id="exampleFormControlFile2">
+            </div>
+        </div>
+
+        <div class="col-md-4 d-flex justify-content-center  align-items-center">
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Local</label>
+                <input name="local-mutira" type="text" class="form-control" id="exampleFormControlInput1">
+            </div>
+        </div>
+        <div class="col-md-4"></div>
+        
+        <div class="col-md-4"></div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-12 d-flex justify-content-center align-items-center">
+            <div class="form-group text-center">
+                <label for="exampleFormControlTextarea1">Texto do Mutirão</label>
+                <textarea name="texto-mutira" class="form-control texto-mutira" style="width:600px;height:500px;" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="row d-flex justify-content-end p-0 m-0">
+        <input type="submit" class="btn btn-primary"></input>
+    </div>
+</form>
