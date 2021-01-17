@@ -32,6 +32,26 @@ class Mutiroes extends Model{
         $stmt->execute();
         return $this;
     }
+    
+     //Deletar Mutiroes
+     public function removeMutiroes(){
+        $query = "DELETE FROM mutiroes where id_usuario = :id_usuario and id_mutirao = :id_mutirao";
+        $stmt =  $this->db->prepare($query);
+        $stmt->bindValue(':id_usuario', $this->__get('id_usuario'));
+        $stmt->bindValue(':id_mutirao', $this->__get('id_mutirao'));
+        $stmt->execute();
+        return $this;
+    
+    }
+
+    public function getMutiroes(){
+        $query = "SELECT id_mutirao, id_usuario, titulo, texto, data_mutirao, localidade from mutiroes order by data_mutirao desc";
+        $stmt =  $this->db->prepare($query);
+        $stmt->execute();
+        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+    }
+
+    
 
 }
 

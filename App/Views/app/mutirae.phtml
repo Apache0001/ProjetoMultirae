@@ -2,58 +2,26 @@
     <div class="row">
         <div class="col-md-12 d-flex justify-content-end align-items-end">
             <a href="/criarmutira"><i class="fas fa-plus-square icon-plus"></i></a>
-        </div>  
+        </div>
     </div>
     <div class="row">
-        <div class="col-md-3 p-3">
-            <div class="card">
-                <img class="card-img-top" src=".../100px180/" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Dia z</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+        <?php foreach ($this->view->getMutiroes as $chave => $mutiroes) {; ?>
+            <div class="col-md-3 p-3">
+                <div class="card card-item">
+                    <img class="card-img-top" src="#" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title"><?php echo $mutiroes['titulo'] ?></h5>
+                        <p class="card-text"><?php echo $mutiroes['data_mutirao'] ?></p>
+                        <a href="#" class="btn btn-primary">Saiba Mais</a>
+                        <?php if ($_SESSION['id'] == $mutiroes['id_usuario']) { ?>
+                            <div class="d-inline m-2">
+                                <button class="btn-mutiroesRemove btn btn-danger" value="<?php echo $mutiroes['id_mutirao']; ?>"><small>Remover</small></button>
+                            </div>
+                        <?php } ?>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-md-3 p-3">
-            <div class="card" >
-                <img class="card-img-top" src=".../100px180/" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Dia z</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3 p-3">
-            <div class="card">
-                <img class="card-img-top" src=".../100px180/" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Dia z</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3 p-3">
-            <div class="card">
-                <img class="card-img-top" src=".../100px180/" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Dia z</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-        </div> <div class="col-md-3 p-3">
-            <div class="card">
-                <img class="card-img-top" src=".../100px180/" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Dia z</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-        </div>
-
+        <?php } ?>
     </div>
 </div>
+

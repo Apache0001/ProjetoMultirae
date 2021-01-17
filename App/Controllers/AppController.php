@@ -58,14 +58,19 @@
             //header('Location: /timeline');
 
         }
-        // ################## Tudo sobre mutiroes###################
+        // ################## Tudo sobre mutiroes ###################
         public function Appmutira(){
             $this->validaAutenticacao();
+
+            $mutiroes = Conteiner::getModel('Mutiroes');
+            $mutiroess = $mutiroes->getMutiroes();
+            $this->view->getMutiroes = $mutiroess ;
 
             $this->render('mutirae', 'layoutApp');
         }
         public function criarmutira(){
             $this->validaAutenticacao();
+
 
             $this->render('criarmutira','layoutApp');
         }
@@ -78,13 +83,25 @@
             $mutiroes->__set('titulo', $_POST['titulo-mutira']);
             $mutiroes->__set('texto', $_POST['texto-mutira']);
             $mutiroes->__set('data_mutirao', $_POST['data-mutira']);
-            $mutiroes->__set('img', $_POST['imagem-mutira']);
+            $mutiroes->__set('img', $_FILES['imagem-mutira']['name']);
             $mutiroes->__set('local', $_POST['local-mutira']);
-
             $mutiroes->salvarMutiroes();
 
             header('Location: /criarmutira');
+        }
+        public function removeMutiroes(){
+            $this->validaAutenticacao();
 
+            $mutiroes = Conteiner::getModel('Mutiroes');
+
+            $mutiroes->__set('id_mutirao', $_POST['id_mutirao']);
+            $mutiroes->__set('id_usuario', $_SESSION['id']);
+
+            $mutiroes->removeMutiroes();
+
+           
+
+            
         }
 
 

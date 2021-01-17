@@ -69,6 +69,11 @@
                 'controller' => 'AppController',
                 'action' => 'cadastrarmutira' 
             );
+            $routes['removeMutiroes'] = array(
+                'route' => '/removeMutiroes',
+                'controller' => 'AppController',
+                'action' => 'removeMutiroes' 
+            );
             $routes['Apprede'] = array(
                 'route' => '/Apprede',
                 'controller' => 'AppController',
