@@ -9,14 +9,6 @@
         public function timeline(){
             //Verifica se o usuário está logado
             $this->validaAutenticacao();
-             // Recuperação dos tweets
-             $mutira = Conteiner::getModel('Mutira');
-             $mutira->__set('id_usuario',$_SESSION['id']);
-             $mutiras = $mutira->getAll();
-             $this->view->mutiras = $mutiras;
-             
-             $contMutira = $mutira->contMutira()[0]['count(*)'];
-             $this->view->contMutira = $contMutira;
              
              
             $this->render('timeline','layoutApp');
@@ -66,6 +58,27 @@
             //header('Location: /timeline');
 
         }
+
+        public function Appmutira(){
+            $this->validaAutenticacao();
+
+            $this->render('mutirae', 'layoutApp');
+        }
+        public function Apprede(){
+            $this->validaAutenticacao();
+            // Recuperação dos tweets
+            $mutira = Conteiner::getModel('Mutira');
+            $mutira->__set('id_usuario',$_SESSION['id']);
+            $mutiras = $mutira->getAll();
+            $this->view->mutiras = $mutiras;
+            
+            $contMutira = $mutira->contMutira()[0]['count(*)'];
+            $this->view->contMutira = $contMutira;
+            
+            $this->render('rede', 'layoutApp');
+        }
+        
+        
 
 
 

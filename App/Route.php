@@ -54,6 +54,16 @@
                 'controller' => 'AppController',
                 'action' => 'removeMutira' 
             );
+            $routes['Appmutira'] = array(
+                'route' => '/Appmutira',
+                'controller' => 'AppController',
+                'action' => 'Appmutira' 
+            );
+            $routes['Apprede'] = array(
+                'route' => '/Apprede',
+                'controller' => 'AppController',
+                'action' => 'Apprede' 
+            );
 
             // ############################### Auth Controllers ##############
             $routes['autenticar'] = array(

@@ -19,8 +19,85 @@
     </header>
 
     <body>
-        <!-- Onde tudo está sendo renderizado -->
-		<?= $this->content() ?>
+		
+	<div class="wrapper">
+        <!-- Sidebar -->
+        <nav id="sidebar">
+            <div class="sidebar-header text-center">
+                <h3>Menu</h3>
+            </div>
+    
+            <ul class="list-unstyled components">
+            
+                <li>
+                    <a id="mutiras"href="/Appmutira">Mutiras</a>
+                </li>
+                <li>
+                    <a id="rede"href="/Apprede">Rede</a>
+                </li>
+                <li>
+                    <a id="perfil"href="#">Perfil</a>
+                </li>
+                
+                <li>
+                    <a href="#">Configurações</a>
+                </li>
+                <li>
+                    <a href="#">Contato</a>
+                </li>
+                <li>
+                    <a href="#">Calendário</a>
+                </li>
+                <li>
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Ajuda</a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu">
+                        <li>
+                            <a href="#">Pag</a>
+                        </li>
+                       
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    
+        <div id="content">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+        
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <i class="fas fa-align-left"></i>
+                        
+                    </button>
+        
+                </div>
+            </nav>
+            <!--Conteudo a ser modificado-->
+            <div id="conteudo">
+                <nav class="navbar navbar-expand-lg menu">
+                    <div class="container">
+                      <div class="navbar-nav">
+                          <a class="menuItem" href="/timeline">
+                              Home
+                          </a>
+                
+                          <a class="menuItem" href="/sair">
+                              Sair
+                          </a>
+                            <img src="" class="menuIco" />
+                      </div>
+                    </div>
+                </nav>
+                <div class="render">
+				<?= $this->content() ?>
+                </div>
+            </div>
+            
+        </div>
+
+    
+</div>
+        
+    <!-- paginas -->
 
     </body>
 </html>
