@@ -34,8 +34,8 @@ class Mutiroes extends Model{
     }
     public function IMGMutiroes(){
             //Pegando valores do formulário
-            $status = 'false';
-            $novoNome = '';
+            $status = false;
+            $novoNome = false;
             //Nome da imagem
             //Caminho da imagem
             $img =  $_FILES['imagem-mutira']['name'];
@@ -52,6 +52,7 @@ class Mutiroes extends Model{
                     $status = true;
                 }
             }
+            
             return array(
                 'status' => $status,
                 'novoNome' => $novoNome

@@ -83,7 +83,10 @@
             $arrayRESP = $mutiroes->IMGMutiroes();
             if($arrayRESP['status']){
                 $mutiroes->__set('img',$arrayRESP['novoNome'] );
-            };
+            }else{
+                $mutiroes->__set('img','indisponivel.png');
+            }
+            
 
             $mutiroes->__set('id_usuario', $_SESSION['id']);
             $mutiroes->__set('titulo', $_POST['titulo-mutira']);
