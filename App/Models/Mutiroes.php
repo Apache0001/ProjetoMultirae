@@ -32,6 +32,32 @@ class Mutiroes extends Model{
         $stmt->execute();
         return $this;
     }
+    public function IMGMutiroes(){
+            //Pegando valores do formulário
+            $status = 'false';
+            $novoNome = '';
+            //Nome da imagem
+            //Caminho da imagem
+            $img =  $_FILES['imagem-mutira']['name'];
+            $arquivo_tmp = $_FILES['imagem-mutira']['tmp_name'];
+
+            $extensao = pathinfo($img, PATHINFO_EXTENSION);
+            $extensao =  strtolower($extensao);
+            
+            if(strstr('.jpg;.jpeg;.gif;.png', $extensao)){
+                $novoNome = uniqid(time()).'.'.$extensao;
+                $destino = 'img/mutiroes/'.$novoNome;
+
+                if(@move_uploaded_file($arquivo_tmp, $destino)){
+                    $status = true;
+                }
+            }
+            return array(
+                'status' => $status,
+                'novoNome' => $novoNome
+            );
+
+    }
     
      //Deletar Mutiroes
      public function removeMutiroes(){
@@ -45,7 +71,7 @@ class Mutiroes extends Model{
     }
 
     public function getMutiroes(){
-        $query = "SELECT id_mutirao, id_usuario, titulo, texto, data_mutirao, localidade from mutiroes order by data_mutirao desc";
+        $query = "SELECT id_mutirao, id_usuario, titulo, texto, data_mutirao, img_mutirao, localidade from mutiroes order by data_mutirao desc";
         $stmt =  $this->db->prepare($query);
         $stmt->execute();
         return $stmt->fetchAll(\PDO::FETCH_ASSOC);

@@ -75,15 +75,21 @@
             $this->render('criarmutira','layoutApp');
         }
         public function cadastrarmutira(){
-            $this->validaAutenticacao();
-
+            
+            $this->validaAutenticacao(); // Validação do usuario
+            
+            
             $mutiroes = Conteiner::getModel('Mutiroes');
+            $arrayRESP = $mutiroes->IMGMutiroes();
+            if($arrayRESP['status']){
+                $mutiroes->__set('img',$arrayRESP['novoNome'] );
+            };
 
             $mutiroes->__set('id_usuario', $_SESSION['id']);
             $mutiroes->__set('titulo', $_POST['titulo-mutira']);
             $mutiroes->__set('texto', $_POST['texto-mutira']);
             $mutiroes->__set('data_mutirao', $_POST['data-mutira']);
-            $mutiroes->__set('img', $_FILES['imagem-mutira']['name']);
+            
             $mutiroes->__set('local', $_POST['local-mutira']);
             $mutiroes->salvarMutiroes();
 
