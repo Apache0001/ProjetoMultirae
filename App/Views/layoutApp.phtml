@@ -19,6 +19,12 @@
         <script src="./js/timeline/timeline.js"></script>
         <script src="./js/timeline/removeMutiroes.js"></script>
 
+        <style>
+            .block:hover{
+                cursor:not-allowed ;
+            }
+        </style>
+
     </header>
 
     <body>
@@ -41,20 +47,21 @@
                 <li>
                     <a id="rede"href="/Apprede">Rede</a>
                 </li>
-                <li>
+                <li class="block">
                     <a id="perfil"href="#">Perfil</a>
+                    
                 </li>
                 
-                <li>
+                <li class="block">
                     <a href="#">Configurações</a>
                 </li>
-                <li>
+                <li class="block">
                     <a href="#">Contato</a>
-                </li>
-                <li>
+                </li >
+                <li class="block">
                     <a href="#">Calendário</a>
                 </li>
-                <li>
+                <li >
                     <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Ajuda</a>
                     <ul class="collapse list-unstyled" id="pageSubmenu">
                         <li>

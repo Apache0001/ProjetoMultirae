@@ -46,9 +46,11 @@ $(document).ready(function () {
             type: 'POST',
             url: 'http://localhost:8080/AppItemMutirao',
             data: `itemMutira=${itemMutirao}`,
-            success:dados => {console.log(dados)},
+            success:console.log('Sucesso!'),
             error: erro => {console.log(erro)}
         })
+
+        
     })
 
 })

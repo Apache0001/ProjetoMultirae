@@ -79,11 +79,7 @@
                 'controller' => 'AppController',
                 'action' => 'Apprede' 
             );
-            $routes['AppItemMutirao'] = array(
-                'route' => '/AppItemMutirao',
-                'controller' => 'AppController',
-                'action' => 'AppItemMutirao' 
-            );
+        
 
 
             // ############################### Auth Controllers ##############

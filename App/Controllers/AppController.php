@@ -128,23 +128,7 @@
             $this->render('rede', 'layoutApp');
         }
 
-        public function AppItemMutirao(){
-            $this->validaAutenticacao(); // Validação do usuario
-            
-            print_r($_POST);
-            /*
-            $id_mutirao = $_POST['itemMutirao']            ;
-            $mutiroes = Conteiner::getModel('Mutiroes');
 
-            $mutiroes->getItemMutirao($id_mutirao);
-
-            $this->view->itemMutiroes = $mutiroes;
-             */
-            $this->render('AppItemMutirao','layoutApp');
-
-
-        }
-        
         
 
 
