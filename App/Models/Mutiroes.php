@@ -78,6 +78,16 @@ class Mutiroes extends Model{
         return $stmt->fetchAll(\PDO::FETCH_ASSOC);
     }
 
+    public function getItemMutirao($id_mutirao){
+        $query = "SELECT id_mutirao, id_usuario, titulo, texto, data_mutirao, img_mutirao, localidade from mutiroes WHERE id_mutirao = $id_mutirao";
+
+        $stmt =  $this->db->prepare($query);
+        $stmt->execute();
+        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+
+
+    }
+
     
 
 }

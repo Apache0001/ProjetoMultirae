@@ -38,10 +38,17 @@ $(document).ready(function () {
 
     })
 
-    /* navegacao entre conteúdos */
+    /*Passando id dos mutiroes para controllers itens-mutiroes */
      
-    
-    
+    $('.item-mutirao').on('click',function(){
+        let itemMutirao = $(this).val()     
+        $.ajax({
+            type: 'POST',
+            url: 'http://localhost:8080/AppItemMutirao',
+            data: `itemMutira=${itemMutirao}`,
+            success:dados => {console.log(dados)},
+            error: erro => {console.log(erro)}
+        })
+    })
 
-
-});
+})

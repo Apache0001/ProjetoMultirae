@@ -16,7 +16,7 @@
                             <h5 class="card-title">Título: <?php echo $mutiroes['titulo'] ?></h5>
                             <p  class="card-text">Data/Hora: <?php echo $mutiroes['data_mutirao'] ?></p>
                         </div>
-                        <a href="#" class="btn btn-primary">Saiba Mais</a>
+                        <button class="btn btn-primary item-mutirao" value="<?php echo $mutiroes['id_mutirao'] ;?>"><a href="/AppItemMutirao">Saiba Mais</a></button>
                         <?php if ($_SESSION['id'] == $mutiroes['id_usuario']) { ?>
                             <div class="d-inline m-2">
                                 <button class="btn-mutiroesRemove btn btn-danger" value="<?php echo $mutiroes['id_mutirao']; ?>"><small>Remover</small></button>
@@ -28,3 +28,10 @@
         <?php } ?>
     </div>
 </div>
+
+<?php 
+    echo '<pre>';
+        print_r($this->view->getMutiroes);
+    echo '<pre>';
+
+?>
