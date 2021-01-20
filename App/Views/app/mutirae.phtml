@@ -6,14 +6,14 @@
     </div>
     <div class="row">
         <?php foreach ($this->view->getMutiroes as $chave => $mutiroes) {; ?>
-            <div class="col-md-4 p-3">
+            <div class="col-lg-4 p-3">
                 <div class="card card-item ">
                     <div class="d-flex justify-content-center align-items-center">
                         <img class="card-img-top img-fluid" style="width:300px;height:200px;"src="img/mutiroes/<?php echo $mutiroes['img_mutirao'] ?>" alt="Card image cap">
                     </div>
                     <div class="card-body">
                         <div class="">
-                            <h5 class="card-title">Título: <?php echo $mutiroes['titulo'] ?></h5>
+                            <h5 class="card-title"> <?php echo $mutiroes['titulo'] ?></h5>
                             <p  class="card-text">Data/Hora: <?php echo $mutiroes['data_mutirao'] ?></p>
                         </div>
                         <button class="btn btn-primary item-mutirao" value="<?php echo $mutiroes['id_mutirao'] ;?>">Saiba Mais</button>
