@@ -11,6 +11,7 @@ use MF\Model\Model;
         private $cidade_usuario;
         private $endereco_usuario;
         private $complemento_usuario;
+        private $senhaAlter;
 
         public function __get($atributo){
             return $this->$atributo;
@@ -27,14 +28,16 @@ use MF\Model\Model;
            $validoNome = true;
            $validoSenha = true;
            $validoCep = true;
+           $validoAlter = true;
            
            if(strlen($this->__get('nome_usuario')) < 3){
                 $validoNome = false;
            }
-           if(strlen($this->__get('senha_usuario')) < 3){
+           if( $this->__get('senha_usuario') != $this->__get('senhaAlter')){
                $validoSenha = false;
+               $validoAlter = false;
            }
-           if(strlen($this->__get('cep')) < 3){
+           if(strlen($this->__get('cep')) < 6){
                $validoCep = false;
            }
 
@@ -47,6 +50,7 @@ use MF\Model\Model;
                'validoNome' => $validoNome,
                'validoSenha' => $validoSenha,
                'validoCep' => $validoCep,
+               'validoAlter' => $validoAlter
 
            );
            return $resp;

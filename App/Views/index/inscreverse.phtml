@@ -12,16 +12,22 @@
                 </div>
 
                 <div class="col-md-12">
+                    <?php if ($this->view->CadastroErro['errosenha'] == false) { ?>
+                        <span class="text text-danger">*As senhas não conferem.</span>
+                    <?php } ?>
                     <input style="width:300px;" type="password" name="senha" placeholder="Senha" class="form-control" id="inputPassword4">
                 </div>
                 <div class="col-md-12">
+                    <?php if ($this->view->CadastroErro['errosenha'] == false) { ?>
+                        <span class="text text-danger">*As senhas não conferem.</span>
+                    <?php } ?>
                     <input style="width:300px;" type="password" name="csenha" placeholder="Confirmar Senha" class="form-control" id="inputPassword4">
                 </div>
                 <div class="col-md-12">
                     <?php if ($this->view->CadastroErro['errocep'] == false) { ?>
                         <span class="text text-danger">*Erro cep: formato (9999999)</span>
                     <?php } ?>
-                    <input type="text" style="width:200px; value=" <?php echo $this->view->usuario['cep'] ?>"name="cep" class="form-control" id="inputCity" placeholder="CEP">
+                    <input type="text" style="width:200px;" name="cep" class="form-control" id="inputCity" placeholder="Cep">
 
                 </div>
                 <div class="col-md-12">

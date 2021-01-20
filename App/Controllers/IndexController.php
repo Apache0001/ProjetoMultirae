@@ -31,7 +31,6 @@
         //Inscricao de usuario
         public function inscreverse(){
              #definindo parametros para tratamentos de erros e recuperação de dados
-             $this->view->erroCadastro = array();
              $this->view->usuario = array(
                 'nome' => '',
                 'csenha' => '',
@@ -46,14 +45,17 @@
                 'valido' => true,
                 'validoNome' => true,
                 'validoSenha' => true,
-                'validoCep' => true
+                'validoCep' => true,
+                'validoAlter' => true
+                
  
             );
             
              $this->view->CadastroErro = array(
                 'erronome' => true,
                 'errosenha' => true,
-                'errocep' => true
+                'errocep' => true,
+                'errosenhas' => true
             );
              #rederizando página inscreverse
              $this->render('inscreverse','layout');
@@ -74,11 +76,13 @@
             $usuario = Conteiner::getModel('Usuario');
             $usuario->__set('nome_usuario', $_POST['nome']);
             $usuario->__set('senha_usuario', md5($_POST['senha']));
+            $usuario->__set('senhaAlter', md5($_POST['csenha']));
             $usuario->__set('cep', $_POST['cep']);
             $usuario->__set('cidade_usuario', $_POST['cidade']);
             $usuario->__set('numero_usuario', $_POST['numero']);
             $usuario->__set('endereco_usuario', $_POST['endereco']);
             $usuario->__set('complemento_usuario', $_POST['complemento']);
+            
 
             
             $resp = $usuario->validarCadastro();
@@ -95,6 +99,7 @@
                     'erronome' => $resp['validoNome'],
                     'errosenha' => $resp['validoSenha'],
                     'errocep' => $resp['validoCep'],
+                    'errosenhas' => $resp['validoAlter']
                 );
                 $this->view->usuario = array(
                     'nome' => $_POST['nome'],
