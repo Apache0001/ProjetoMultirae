@@ -79,6 +79,16 @@
                 'controller' => 'AppController',
                 'action' => 'Apprede' 
             );
+            $routes['perfil'] = array(
+                'route' => '/perfil',
+                'controller' => 'AppController',
+                'action' => 'Perfil' 
+            );
+            $routes['Atualizar'] = array(
+                'route' => '/atualizar',
+                'controller' => 'AppController',
+                'action' => 'atualizar' 
+            );
         
 
 

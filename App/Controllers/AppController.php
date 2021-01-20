@@ -128,6 +128,63 @@
             $this->render('rede', 'layoutApp');
         }
 
+        public function Perfil(){
+            $this->validaAutenticacao();
+            $this->view->UsuarioSalvo = false;
+            $this->render('perfil', 'layoutApp');
+        }
+
+        public function atualizar(){
+            $this->validaAutenticacao();
+            $usuario = Conteiner::getModel('Usuario');
+
+            $nome_usuario =  isset($_POST['nome']) ? $_POST['nome'] : null;
+            $senha_usuario =  isset($_POST['senha']) ? $_POST['senha'] : null;
+            $cep =  isset($_POST['cep']) ? $_POST['cep'] : null;
+            $cidade =  isset($_POST['cidade']) ? $_POST['cidade'] : null;
+            $numero =  isset($_POST['numero']) ? $_POST['numero'] : '';
+            $endereco =  isset($_POST['endereco']) ? $_POST['endereco'] : null;
+            $complemento =  isset($_POST['complemento']) ? $_POST['complemento'] : null;
+
+
+            $usuario->__set('nome_usuario', $nome_usuario);
+            $usuario->__set('senha_usuario', md5($senha_usuario));
+            $usuario->__set('cep', $cep);
+            $usuario->__set('cidade_usuario', $cidade);
+            $usuario->__set('numero_usuario', $numero);
+            $usuario->__set('endereco_usuario', $endereco);
+            $usuario->__set('complemento_usuario', $complemento);
+            $usuario->__set('id', $_SESSION['id']);
+
+
+            if($nome_usuario != null){
+                $usuario->Atualizar('nome_usuario', 'nome_usuario');
+            }
+            if($senha_usuario != null){
+                $usuario->Atualizar('senha_usuario', 'senha_usuario');
+            }
+            if($cep != null){
+                $usuario->Atualizar('cep', 'cep');
+            }
+            if($cidade != null){
+                $usuario->Atualizar('cidade_usuario', 'cidade_usuario');
+            }
+            if($endereco != null){
+                $usuario->Atualizar('endereco_usuario', 'endereco_usuario');
+            }
+            if($complemento != null){
+                $usuario->Atualizar('complemento_usuario', 'complemento_usuario');
+            }
+            if($numero != null){
+                $usuario->Atualizar('numero_usuario', 'numero_usuario');
+            }
+            
+
+            
+            $this->view->UsuarioSalvo = true;
+            $this->render('perfil', 'layoutApp');
+        }
+
 
         
 

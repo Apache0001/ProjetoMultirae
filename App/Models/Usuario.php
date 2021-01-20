@@ -88,6 +88,23 @@ use MF\Model\Model;
             }
             return $this;
         }
+        public function Atualizar($nome, $valor){
+            $query = "
+                UPDATE
+                    usuarios
+                SET 
+                   $nome = :{$valor}
+                WHERE
+                    id_usuario = :id_usuario
+            ";
+            $stmt = $this->db->prepare($query);
+            $stmt->bindValue(":{$valor}", $this->__get($valor));
+            $stmt->bindValue(':id_usuario', $this->__get('id'));            
+            
+            $stmt->execute();
+            return $this;
+
+        }
 
     }
 ?>
