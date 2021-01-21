@@ -4,7 +4,7 @@ class Connection{
         public function getDb(){
             try{
                 
-                $conn = new \PDO("mysql:host=localhost;dbname=epiz_27737767_recodeprojeto;charset=utf8","epiz_27737767","OpR1jVqU5kM");
+                $conn = new \PDO("mysql:host=localhost;dbname=recodeprojeto;charset=utf8","root","");
                 return $conn;
             }
             catch(\PDOException $erro){
