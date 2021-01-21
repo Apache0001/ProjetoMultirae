@@ -1,0 +1,146 @@
+<?php 
+	$login = isset($_GET['login']);
+?>
+
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Miniframework</title>
+		<link rel="stylesheet" type="text/css"href="/css/login/login.css">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+		<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+		<script src="https://code.jquery.com/jquery-3.5.1.js"integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  		crossorigin="anonymous"></script>
+
+		<link rel="stylesheet" type="text/css" href="/css/footer/footer.css">
+		<link rel="stylesheet" type="text/css" href="/css/cadastro/formulario.css">
+		<link rel="stylesheet" type="text/css" href="/css/index/index.css">
+		<link rel="stylesheet" type="text/css" href="/css/header/header.css">
+
+
+		
+
+		<!--JQUERY-->
+		<script src="/js/home/login.js"></script>
+
+
+	</head>
+
+	<body>
+	<header><!--Cabecalho do site-->
+				
+		<nav class=" nave-bar navbar navbar-expand-sm navbar-light ">
+			<div class="container">
+			<a href="/" class="navbar-brand">
+				<img style="width:80px;height:80px;"src="img/together-w.png" alt="">
+			</a>
+
+			<!--Botao collapse responsivo-->
+			<button class="navbar-toggler" data-toggle="collapse" data-target="#nav-principal">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<!--Menu navegacao-->
+			<div class="collapse navbar-collapse" id="nav-principal">
+				<ul class="navbar-nav ml-auto align-items-center ">
+				<li class="nav-item">
+					<a class="nav-link" href="/recursos">Seja um voluntário</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link link-block " href="#">O problema do lixo</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link link-block" href="#">Como separar o lixo?</a>
+				</li>
+				
+				<li class="nav-item">
+					<a class="nav-link" href="/sobreNos">Sobre Nós</a>
+				</li>
+				<li class="nav-item">
+					<a id="entrar" class="btn btn-outline-light ml-sm-4" href="#">Entrar</a>
+				</li>
+				</ul>
+			</div>
+			</div>
+		</nav>
+	<!--TELA DE LOGIN-->
+	<div id="telaLogin" <?php if ($login == 'erro'){ ?> style="display:block;position:absolute; z-index:2;" <?php } ?>>
+		<div class="wrapper <?php if($login != 'erro'){?> fadeInDown <?php }?>">
+			
+	  		<div id="formContent">
+			  <i id="icoIMG" class="far fa-times-circle"></i>
+			  
+	    		<!-- Tabs Titles -->
+	
+				<!-- Icon -->
+				<div class="<?php if($login != 'erro'){?> fadeInDown <?php }?> first">
+			
+				</div>
+	
+				<!-- Login Form -->
+				<form action="/autenticar" method="post">
+				<input type="text" id="login" class="<?php if($login != 'erro'){?> fadeInDown <?php }?> input-text second" name="login" placeholder="login">
+				<input type="password" id="password" class="<?php if($login != 'erro'){?> fadeInDown <?php }?> input-text third" name="senha" placeholder="password">
+				<input type="submit" class="<?php if($login != 'erro'){?> fadeInDown <?php }?> btn-login fourth" value="Log In">
+				</form>
+				<?php if($login == 'erro'){?> <span class="msgErro fadeInDown">Erro na Autenticação</span> <?php }?>
+				<!-- Remind Passowrd -->
+				<div id="formFooter">
+				<a class="underlineHover" href="#">Esqueceu a senha?</a>
+				</div>
+	
+	  		</div>
+		</div>
+	</div>
+	<!--FIM TELA DE LOGIN -->
+
+	</header>
+		<!-- Onde tudo está sendo renderizado -->
+		<?= $this->content() ?>
+
+
+
+	<!--Fim Section juros-->
+	<footer class="mt-4 mb-4">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8">
+				<p>
+					<a href="">Home</a>
+					<a href="">Recursos</a>
+					<a href="">Benefícios</a>
+					<a href="">Preço</a>
+
+				</p>
+				</div>
+				<div class="col-md-4 d-flex justify-content-center align-items-center">
+					<a class="btn btn-outline-success link-block ml-2"href="#">
+						<i class="fab fa-youtube fa-lg"></i>
+					</a>
+					<a class="btn btn-outline-success link-block ml-2"href="#">
+						<i class="fab fa-facebook fa-lg"></i>
+					</a>
+					<a class="btn btn-outline-success link-block ml-2"href="#">
+						<i class="fab fa-twitter link-block fa-lg"></i>
+					</a>
+					<a class="btn btn-outline-success link-block ml-2"href="#">
+						<i class="fab fa-instagram fa-lg"></i>
+					</a>
+
+				</div>
+			</div>
+		</div>
+  	</footer>
+
+	</body>
+
+</html>

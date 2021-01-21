@@ -1,0 +1,100 @@
+
+       
+                <div class="render">
+            
+            <div id="rede-render"class="conteudo-rende container mt-5">
+                <div class="row pt-2">
+                    
+                    <div class="col-md-2">
+            
+                        <div class="perfil">
+                            <div class="perfilTopo">
+                            
+                            </div>
+            
+                            <div class="perfilPainel">
+                                
+                                <div class="row mt-2 mb-2">
+                                    <div class="col mb-2">
+                                        <span class="perfilPainelNome"><?php echo $_SESSION['nome']?></span>
+                                    </div>
+                                </div>
+            
+                                <div class="row mb-2">
+            
+                                    <div class="col">
+                                        <span class="perfilPainelItem">Mutiras</span><br />
+                                        <span class="perfilPainelItemValor"><?php echo $this->view->contMutira ?></span>
+                                    </div>
+            
+                                    <div class="col">
+                                        <span class="perfilPainelItem">Seguindo</span><br />
+                                        <span class="perfilPainelItemValor">0</span>
+                                    </div>
+            
+                                    <div class="col">
+                                        <span class="perfilPainelItem">Seguidores</span><br />
+                                        <span class="perfilPainelItemValor">0</span>
+                                    </div>
+            
+                                </div>
+            
+                            </div>
+                        </div>
+            
+                    </div>
+            
+                    <div class="col-md-6 ">
+                        <div class="row mb-2">
+                            <div class="col tweetBox">
+    
+                                    <textarea  class="form-control texto-mutira" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                    
+                                    <div class="col mt-2 d-flex justify-content-end">
+                                        <button id="btn-salvar"type="submit" class="btn btn-primary">Mutirar</button>
+                                    </div>
+            
+                               
+                            </div>
+                        </div>
+                        <?php foreach($this->view->mutiras as $id_mutira => $mutira){ ?>
+                            <div class="row tweet">
+                                <div class="col">
+                                
+                                    <p><strong><?php echo $mutira['nome_usuario']?></strong> <span class="text text-muted"><?php echo $mutira['data']?></span></p>
+                                    <p><?php echo $mutira['mutira']?></p>
+                
+                                    <br />
+                                    <?php if($_SESSION['id'] == $mutira['id_usuario']){ ?>
+                                        <div class="col d-flex justify-content-end">
+                                            <button type="" class="btn btn-danger btn-remove" value="<?php echo $mutira['mutira']?>"><small>Remover</small></button>
+                                        </div>
+                                    <?php }?>
+                                </div>
+                            </div>
+                        <?php }?>
+    
+            
+            
+                    </div>
+            
+            
+                    <div class="col-md-4">
+                        <div class="quemSeguir">
+                            <span class="quemSeguirTitulo">Quem seguir</span><br />
+                            <hr />
+                            <a href="" class="quemSeguirTxt">Procurar por pessoas conhecidas</a>
+                        </div>
+                        <div class="input-group md mb-3">
+                            <input type="text" name="pesquisarPor" class="form-control" placeholder="Quem você está procurando?">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="submit">Procurar</button>
+                            </div>
+                        </div>
+                    </div>
+            
+                </div>
+            </div>
+            
+
+<!-- paginas -->

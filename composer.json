@@ -1,0 +1,19 @@
+{
+    "description": "Aplicativo padrao MVC",
+    "name":"pablomini/php",
+    "require":{
+        "php": ">= 7.0"
+    },
+    "authors": [
+        {
+            "name":"Pablo Oliveira Mesquita",
+            "email":"pablo_omesquita@hotmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4":{
+            "App\\": "App/",
+            "MF\\":"vendor/MF/"
+        }
+    }
+}
